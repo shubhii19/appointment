@@ -1,3 +1,12 @@
 
 // API for adding doctor
-// 5:15:00
+
+export const addDoctorController = async()=>{
+    try {
+        const {name,email,password,speciality,degree,experience,about,fee,address} = req.body;
+        const imagefile = req.file;
+        console.log(name,email,password,speciality,degree,experience,about,fee,address,imagefile)
+    } catch (error) {
+        
+    }
+}
