@@ -11,11 +11,11 @@ const AdminContextProvider = (props) => {
   );
   const [doctors, setDoctors] = useState([]);
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-//   console.log(aToken);
+  //   console.log(aToken);
   const getAllDoctors = async () => {
     try {
       // const {data} = await axios.post(backendUrl + '/api/admin/all-doctors',{},{headers:aToken});
-      const {data} = await axios.post(
+      const { data } = await axios.post(
         backendUrl + "/api/admin/all-doctors",
         {},
         {
@@ -26,12 +26,25 @@ const AdminContextProvider = (props) => {
           },
         }
       );
-
       if (data.success) {
         setDoctors(data.doctors);
         console.log(data.doctors);
       } else {
         toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  const changeAvailability = async (docId) => {
+    try {
+      const {data} = await axios.post(backendUrl+'/api/admin/change-availability',{docId},{headers:{aToken}});
+      if(data.success){
+        toast.success(data.message);
+        getAllDoctors()
+      }else{
+      toast.error(data.message)
       }
     } catch (error) {
       toast.error(error.message);
@@ -44,6 +57,7 @@ const AdminContextProvider = (props) => {
     backendUrl,
     doctors,
     getAllDoctors,
+    changeAvailability
   };
 
   return (

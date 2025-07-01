@@ -2,6 +2,7 @@ import express from 'express';
 import { addDoctorController, adminLoginController, allDoctorsController } from '../controllers/adminController.js';
 import upload from '../middlewares/multer.js';
 import { authAdmin } from '../middlewares/authAdmin.js';
+import { changeAvailabilityController } from '../controllers/doctorController.js';
 
 const router = express.Router();
 
@@ -9,7 +10,7 @@ const router = express.Router();
 router.post('/add-doctor',authAdmin,upload.single('image'),addDoctorController);
 router.post('/login',adminLoginController)
 router.post('/all-doctors',authAdmin,allDoctorsController)
-
+router.post('/change-availability',authAdmin,changeAvailabilityController)
 
 
 export default router;
