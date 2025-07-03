@@ -5,6 +5,7 @@ import connectDB from './config/mongodb.js';
 import connectCloudinary from './config/cloudinary.js';
 import adminRoute from './routes/adminRoute.js'
 import doctorRoute from './routes/doctorRoute.js'
+import userRoute from './routes/userRoute.js'
 
 // app config
 const app = express();
@@ -20,7 +21,8 @@ app.use(cors());
 // api endpoint
 
 app.use('/api/admin',adminRoute);
-app.use('/api/doctor',doctorRoute)
+app.use('/api/doctor',doctorRoute);
+app.use('/api/user',userRoute);
 app.get('/',(req,res)=>{
     res.send('APi working')
 })
