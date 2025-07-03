@@ -1,12 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { backendUrl, token, setToken } = useContext(AppContext);
   const [state, setState] = useState("Sign Up");
-
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,6 +43,12 @@ const Login = () => {
       toast.error(error.message)
     }
   };
+
+  useEffect(()=>{
+    if(token){
+      navigate('/')
+    }
+  },[token])
 
   return (
     <form className="min-h-[80vh] flex items-center" onSubmit={onSubmitHandler}>
@@ -120,4 +127,8 @@ export default Login;
 
 
 
-// 9:21
+
+
+
+
+// 9:25
