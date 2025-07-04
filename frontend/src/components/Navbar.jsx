@@ -84,7 +84,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const [showMenu, setShowMenu] = useState(false);
-  const {token,setToken} = useContext(AppContext)
+  const {token,setToken,userData} = useContext(AppContext)
   const [showProfileMenu, setShowProfileMenu] = useState(false); // new state
 
   const logout = ()=>{
@@ -101,7 +101,7 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center gap-4 ">
-        {token ? (
+        {token && userData ?  (
           <div className="relative">
             <div
               className="flex items-center gap-2 cursor-pointer group"
@@ -109,7 +109,7 @@ const Navbar = () => {
               // Desktop me hover bhi rakhna chahte ho toh ye line hata dena
               // ya combine karna hover + click dono ke liye, par ye simple toggle hai
             >
-              <img className="w-8 rounded-full" src={assets.profile_pic} alt="" />
+              <img className="w-8 rounded-full" src={userData.image} alt="" />
               <img className="w-2.5" src={assets.dropdown_icon} alt="" />
             </div>
 
