@@ -214,3 +214,16 @@ export const bookappointmentController = async(req,res)=>{
     res.json({ success: false, message: error.message });
   }
 }
+
+// API to get user appointment for frontend my-appointments page
+export const listAppointmentConntroller = async(req,res)=>{
+  try {
+     const userId = req.user.id;
+     const appointments = await appointmentModel.find({userId});
+
+     res.json({success:true,appointments})
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message }); 
+  }
+}
