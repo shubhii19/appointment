@@ -24,68 +24,127 @@ const Appointent = () => {
     setDocInfo(docInfo);
   };
 
+  // const getAvailableSlots = async () => {
+  //   setDocSlots([]);
+
+  //   // getting current date
+
+  //   let today = new Date();
+  //   for (let i = 0; i < 7; i++) {
+  //     // getting date with index
+  //     let currentDate = new Date(today);
+  //     currentDate.setDate(today.getDate() + i);
+
+  //     // setting end time of date with index
+  //     let endTime = new Date();
+  //     endTime.setDate(today.getDate() + i);
+  //     endTime.setHours(21, 0, 0, 0);
+
+  //     // setting hours
+  //     if (today.getDate() === currentDate.getDate()) {
+  //       currentDate.setHours(
+  //         currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
+  //       );
+  //       currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
+  //     } else {
+  //       currentDate.setHours(10);
+  //       currentDate.setMinutes(0);
+  //     }
+  //     let timeSlots = [];
+
+  //     while (currentDate < endTime) {
+  //       let formattedTime = currentDate.toLocaleTimeString([], {
+  //         hour: "2-digit",
+  //         minute: "2-digit",
+  //       });
+
+  //       let day = currentDate.getDate();
+  //       let month = currentDate.getMonth() + 1;
+  //       let year = currentDate.getFullYear();
+
+  //       const slotDate = day + "_" + month + "_" + year;
+  //       const slotTime = formattedTime;
+
+  //       const isSlotAvailable =
+  //         docInfo.slots_booked[slotDate] &&
+  //         docInfo.slots_booked[slotDate].includes(slotTime)
+  //           ? false
+  //           : true;
+
+  //       if (isSlotAvailable) {
+  //         // add slots to array
+  //         timeSlots.push({
+  //           datetime: new Date(currentDate),
+  //           time: formattedTime,
+  //         });
+  //       }
+
+  //       // increment current time by 30 minutes
+  //       currentDate.setMinutes(currentDate.getMinutes() + 30);
+  //     }
+
+  //     setDocSlots((prev) => [...prev, timeSlots]);
+  //   }
+  // };
+
   const getAvailableSlots = async () => {
-    setDocSlots([]);
+  if (!docInfo || !docInfo.slots_booked) return; // ADD THIS GUARD
 
-    // getting current date
+  setDocSlots([]);
 
-    let today = new Date();
-    for (let i = 0; i < 7; i++) {
-      // getting date with index
-      let currentDate = new Date(today);
-      currentDate.setDate(today.getDate() + i);
+  let today = new Date();
+  for (let i = 0; i < 7; i++) {
+    let currentDate = new Date(today);
+    currentDate.setDate(today.getDate() + i);
 
-      // setting end time of date with index
-      let endTime = new Date();
-      endTime.setDate(today.getDate() + i);
-      endTime.setHours(21, 0, 0, 0);
+    let endTime = new Date();
+    endTime.setDate(today.getDate() + i);
+    endTime.setHours(21, 0, 0, 0);
 
-      // setting hours
-      if (today.getDate() === currentDate.getDate()) {
-        currentDate.setHours(
-          currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
-        );
-        currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
-      } else {
-        currentDate.setHours(10);
-        currentDate.setMinutes(0);
-      }
-      let timeSlots = [];
-
-      while (currentDate < endTime) {
-        let formattedTime = currentDate.toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-        });
-
-        let day = currentDate.getDate();
-        let month = currentDate.getMonth() + 1;
-        let year = currentDate.getFullYear();
-
-        const slotDate = day + "_" + month + "_" + year;
-        const slotTime = formattedTime;
-
-        const isSlotAvailable =
-          docInfo.slots_booked[slotDate] &&
-          docInfo.slots_booked[slotDate].includes(slotTime)
-            ? false
-            : true;
-
-        if (isSlotAvailable) {
-          // add slots to array
-          timeSlots.push({
-            datetime: new Date(currentDate),
-            time: formattedTime,
-          });
-        }
-
-        // increment current time by 30 minutes
-        currentDate.setMinutes(currentDate.getMinutes() + 30);
-      }
-
-      setDocSlots((prev) => [...prev, timeSlots]);
+    if (today.getDate() === currentDate.getDate()) {
+      currentDate.setHours(
+        currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
+      );
+      currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
+    } else {
+      currentDate.setHours(10);
+      currentDate.setMinutes(0);
     }
-  };
+
+    let timeSlots = [];
+
+    while (currentDate < endTime) {
+      let formattedTime = currentDate.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+
+      let day = currentDate.getDate();
+      let month = currentDate.getMonth() + 1;
+      let year = currentDate.getFullYear();
+
+      const slotDate = day + "_" + month + "_" + year;
+      const slotTime = formattedTime;
+
+      const isSlotAvailable =
+        docInfo.slots_booked[slotDate] &&
+        docInfo.slots_booked[slotDate].includes(slotTime)
+          ? false
+          : true;
+
+      if (isSlotAvailable) {
+        timeSlots.push({
+          datetime: new Date(currentDate),
+          time: formattedTime,
+        });
+      }
+
+      currentDate.setMinutes(currentDate.getMinutes() + 30);
+    }
+
+    setDocSlots((prev) => [...prev, timeSlots]);
+  }
+};
 
   const bookAppointment = async () => {
     console.log("clicked");

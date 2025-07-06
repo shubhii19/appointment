@@ -227,3 +227,18 @@ export const listAppointmentConntroller = async(req,res)=>{
     res.json({ success: false, message: error.message }); 
   }
 }
+
+
+
+// API to cancel appointment
+export const cancelAppointmentController = async(req,res)=>{
+  try {
+    const userId = req.user.id;
+    const {appointmentId}=req.body;
+    const appointmentData = await appointmentModel.findById(appointmentId)
+    
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message }); 
+  }
+}
