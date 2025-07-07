@@ -130,3 +130,6 @@ export const appointmentsAdminController = async(req,res)=>{
     return res.json({ success: false, message: error.message });
   }
 }
+
+
+// api to cancel appointment by admin

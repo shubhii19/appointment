@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 export const authAdmin = async(req,res,next) =>{
     try {
       const {atoken} = req.headers;
-      console.log("token from middleware=> ", atoken)
+      // console.log("token from middleware=> ", atoken)
       if(!atoken){
         return res.json({success:false,message:'Not authorized login again'})
       }  
