@@ -139,3 +139,32 @@ export const doctorDashboardController = async(req,res)=>{
  
   }
 }
+
+
+// api to get doctor profile for doctor panel
+
+export const doctorProfileController = async(req,res)=>{
+  try {
+     const docId = req.doc.id; 
+     const profileData = await doctorModel.findById(docId).select('-password');
+     res.json({success:true,profileData})
+  } catch (error) {
+    console.log(error);
+    return res.json({ success: false, message: error.message });
+  }
+}
+
+// api to update doctor profile data from doctor panel
+
+export const updateDoctorProfileController = async(req,res)=>{
+  try {
+    const docId = req.doc.id; 
+    const {fees,address,available}=req.body;
+    await doctorModel.findByIdAndUpdate(docId,{fees,available,address})
+
+    res.json({success:true,message:'Profile updated'})
+  } catch (error) {
+    console.log(error);
+    return res.json({ success: false, message: error.message });
+  }
+}
