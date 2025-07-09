@@ -19,7 +19,7 @@ import DoctorProfile from './pages/Doctor/DoctorProfile'
 const App = () => {
   const {aToken} = useContext(AdminContext);
   const {dtoken} = useContext(DoctorContext);
-  console.log(dtoken , "d")
+  // console.log(dtoken , "d")
   return aToken || dtoken ? (
     <div className='bg-[#F8F9FD]'>
      <ToastContainer/>
