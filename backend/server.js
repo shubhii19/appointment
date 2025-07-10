@@ -22,8 +22,10 @@ app.use(cookieParser());
 const allowedOrigins = [
 //   'http://localhost:5173',   
 'https://appointment-176e4osxo-shubhi-vishwakarmas-projects.vercel.app',
-  'https://appointment-seven-xi.vercel.app',     
-  'http://localhost:5174',        
+  'https://appointment-seven-xi.vercel.app',   
+  'https://appointment-admin-six.vercel.app',        // admin live
+  'https://appointment-admin-ntvssy1d6-shubhi-vishwakarmas-projects.vercel.app' // admin preview  
+//   'http://localhost:5174',        
 ];
 app.use(cors({
   origin: function (origin, callback) {
