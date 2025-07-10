@@ -159,8 +159,8 @@ export const doctorProfileController = async(req,res)=>{
 export const updateDoctorProfileController = async(req,res)=>{
   try {
     const docId = req.doc.id; 
-    const {fees,address,available}=req.body;
-    await doctorModel.findByIdAndUpdate(docId,{fees,available,address})
+    const {fee,address,available}=req.body;
+    await doctorModel.findByIdAndUpdate(docId,{fee,available,address})
 
     res.json({success:true,message:'Profile updated'})
   } catch (error) {
