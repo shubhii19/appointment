@@ -20,7 +20,9 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 const allowedOrigins = [
-  'http://localhost:5173',        
+//   'http://localhost:5173',   
+'https://appointment-176e4osxo-shubhi-vishwakarmas-projects.vercel.app',
+  'https://appointment-seven-xi.vercel.app',     
   'http://localhost:5174',        
 ];
 app.use(cors({
