@@ -19,10 +19,8 @@ Doctors can manage their schedules, accept/reject appointments, and view patient
 
 - **Frontend:** React.js, Tailwind CSS  
 - **Backend:** Node.js, Express.js  
-- **Database:** MongoDB  
+- **Database:** MongoDB Atlas
 - **Authentication:** JWT (JSON Web Token)  
-- **Email Notifications:** Nodemailer  
-- **Calendar Integration:** FullCalendar / Google Calendar API (optional)
 
 ---
 
@@ -30,8 +28,7 @@ Doctors can manage their schedules, accept/reject appointments, and view patient
 
 - 🧑‍⚕️ Doctor registration and profile management  
 - 👩‍💻 Patient sign-up and appointment booking  
-- 📅 Real-time slot availability and booking system  
-- 🔔 Email notifications for booking confirmations and reminders  
+- 📅 Real-time slot availability and booking system   
 - 🧾 Appointment history and cancellation options  
 - 🧠 Admin dashboard for managing users and appointments  
 - 📱 Fully responsive UI built with Tailwind CSS  
