@@ -1,12 +1,17 @@
-# 🌍 Multi-NGO Crowdfunding Website
+# 🏥 Doctor Appointment Booking Application
 
-A full-stack web platform that connects multiple NGOs with donors to support social causes through transparent crowdfunding, event tracking, and report generation. Built using the **MERN stack**, this project ensures secure transactions, easy management, and a seamless donor experience.
+A full-stack web application that allows patients to book appointments with doctors online.  
+It provides a seamless experience for both doctors and patients — enabling real-time slot booking, appointment management, and email notifications for confirmations and reminders.
+
+Built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)** for performance, scalability, and security.
 
 ---
 
 ## 💡 Overview
 
-This platform helps NGOs raise funds efficiently and allows donors to contribute to causes they care about. Admins can manage NGOs, verify campaigns, and track donations with analytics dashboards.
+The **Doctor Appointment Booking Application** simplifies the process of scheduling doctor consultations.  
+Patients can register, browse doctors by specialization, check available slots, and book appointments instantly.  
+Doctors can manage their schedules, accept/reject appointments, and view patient details from their dashboard.
 
 ---
 
@@ -16,20 +21,20 @@ This platform helps NGOs raise funds efficiently and allows donors to contribute
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB  
 - **Authentication:** JWT (JSON Web Token)  
-- **Payment Gateway:** Razorpay  
-- **Hosting:** Vercel (Frontend) & Render (Backend)
+- **Email Notifications:** Nodemailer  
+- **Calendar Integration:** FullCalendar / Google Calendar API (optional)
 
 ---
 
 ## 🚀 Features
 
-- NGO profile registration and approval system  
-- Donor registration and donation tracking  
-- Secure payment integration using Razorpay  
-- Admin dashboard with analytics and reports  
-- Event creation and donation progress tracking  
-- Email notifications and user authentication  
-- Responsive and user-friendly interface  
+- 🧑‍⚕️ Doctor registration and profile management  
+- 👩‍💻 Patient sign-up and appointment booking  
+- 📅 Real-time slot availability and booking system  
+- 🔔 Email notifications for booking confirmations and reminders  
+- 🧾 Appointment history and cancellation options  
+- 🧠 Admin dashboard for managing users and appointments  
+- 📱 Fully responsive UI built with Tailwind CSS  
 
 ---
 
@@ -39,21 +44,17 @@ Follow these steps to set up the project locally 👇
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/multi-ngo-crowdfunding.git
+git clone https://github.com/username/doctor-appointment-booking.git
 
-# Navigate to project directory
-cd multi-ngo-crowdfunding
+# Navigate to project folder
+cd doctor-appointment-booking
 
-# Install dependencies
-npm install
-
-# Go to backend and install dependencies
+# Backend setup
 cd backend
 npm install
-
-# Start the backend server
 npm run server
 
-# Go to frontend and start the React app
-cd frontend
+# Frontend setup
+cd ../frontend
+npm install
 npm start
