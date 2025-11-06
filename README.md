@@ -44,7 +44,7 @@ Follow these steps to set up the project locally 👇
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/doctor-appointment-booking.git
+https://github.com/shubhii19/appointment
 
 # Navigate to project folder
 cd doctor-appointment-booking
