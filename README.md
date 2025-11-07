@@ -1,4 +1,4 @@
-# 🏥 Doctor Appointment Booking Application
+# 🏥 Doctor Appointment Booking Application                 
 
 A full-stack web application that allows patients to book appointments with doctors online.  
 It provides a seamless experience for both doctors and patients — enabling real-time slot booking, appointment management, and email notifications for confirmations and reminders.
