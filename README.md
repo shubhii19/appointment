@@ -4,7 +4,7 @@ A full-stack web application that allows patients to book appointments with doct
 It provides a seamless experience for both doctors and patients — enabling real-time slot booking, appointment management, and email notifications for confirmations and reminders.
 
 Built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)** for performance, scalability, and security.
-
+                                                                
 ---
 
 ## 💡 Overview                                                       
