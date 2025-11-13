@@ -17,7 +17,7 @@ Doctors can manage their schedules, accept/reject appointments, and view patient
 
 ## ⚙️ Tech Stack
 
-- **Frontend:** React.js, Tailwind CSS  
+- **Frontend:** React.js, Tailwind CSS                        
 - **Backend:** Node.js, Express.js  
 - **Database:** MongoDB Atlas
 - **Authentication:** JWT (JSON Web Token)  
