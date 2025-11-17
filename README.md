@@ -6,7 +6,7 @@ It provides a seamless experience for both doctors and patients — enabling rea
 Built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)** for performance, scalability, and security.
                                                                 
 ---
-                                                 
+                                                                        
 ## 💡 Overview                                                       
                                   
 The **Doctor Appointment Booking Application** simplifies the process of scheduling doctor consultations.  
