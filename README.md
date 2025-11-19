@@ -14,7 +14,7 @@ Patients can register, browse doctors by specialization, check available slots, 
 Doctors can manage their schedules, accept/reject appointments, and view patient details from their dashboard.                 
                                     
 ---
-
+               
 ## ⚙️ Tech Stack
 
 - **Frontend:** React.js, Tailwind CSS                        
