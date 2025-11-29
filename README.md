@@ -8,7 +8,7 @@ Built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)** for perf
 ---                                                         
                                                                                             
 ## 💡 Overview                                                                                                                                                                                  
-                                                                                                                                                                                              
+                                                                                                                                                                                                                           
 The **Doctor Appointment Booking Application** simplifies the process of scheduling doctor consultations.  
 Patients can register, browse doctors by specialization, check available slots, and book appointments instantly.  
 Doctors can manage their schedules, accept/reject appointments, and view patient details from their dashboard.                 
